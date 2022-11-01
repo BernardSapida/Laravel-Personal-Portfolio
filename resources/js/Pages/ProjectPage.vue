@@ -25,6 +25,7 @@
 <style lang="scss" scoped>
     section {
         position: relative;
+        overflow-x: hidden;
 
         & div.square-1 {
             position: fixed;

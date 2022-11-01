@@ -1,13 +1,6 @@
 <template>
     <section>
-        <div class="square-1"></div>
-        <div class="square-2"></div>
-        <Navigation />
-        <Landing />
-        <Portfolio />
-        <Myself />
-        <Contact />
-        <Footer />
+        <h1>NOT FOUND</h1>
     </section>
 </template>
 

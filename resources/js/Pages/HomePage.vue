@@ -33,6 +33,7 @@
 
 <style lang="scss" scoped>
     section {
+        overflow-x: hidden;
         position: relative;
 
         & div.square-1 {
