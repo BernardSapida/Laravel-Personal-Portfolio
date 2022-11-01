@@ -1,12 +1,12 @@
 <template>
-    <section class="container p-3 mb-5">
+    <section class="container p-3 mb-5 mt-3">
         <article class="About-Me">
             <h1>Skill &<br>Experience</h1>
-            <p>Since beginning my journey as a freelance developer nearly 10 years ago, I’ve done remote work for agencies, consulted for startups, and collaborated with talented people to create web products for both business and consumer use.</p>
+            <p>Since beginning my journey as a freelance developer nearly 4 years ago, I've done remote work for clients and collaborated with talented people to create web application for capstones, thesis, and consumer use.</p>
             <p>I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.</p>
             <p>Visit my <a href="https://www.linkedin.com/in/bernardsapida/" target="_blank">LinkedIn</a> profile for more details or just contact me.</p>
         </article>
-        <article class="graph">
+        <article class="graph d-block">
             <canvas id="polarArea"></canvas>
         </article>
     </section>
@@ -52,6 +52,7 @@ export default {
 
 <style lang="scss" scoped>
     section.container {
+        padding: 50px 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,6 +69,7 @@ export default {
                     margin-bottom: 20px;
                     font-size: 5rem;
                     font-weight: bolder;
+                    color: hsl(180, 100%, 43%);
                 }
 
                 & p a {
@@ -76,6 +78,7 @@ export default {
             }
 
             &.graph {
+                display: block;
                 max-width: 400px;
                 width: 100%;
             }

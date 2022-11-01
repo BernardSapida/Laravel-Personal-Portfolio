@@ -7,7 +7,7 @@
         <article class="projects-figure">
             <figure>
                 <img src="images/Projects/Burgerhub.png" alt="Burgerhub">
-                <div class="image-cover">
+                <div class="image-cover" @click="redirectTo('https://burgerhub.x10.mx/')">
                     <div class="circle">
                         <p>Visit Project</p>
                     </div>
@@ -15,7 +15,7 @@
             </figure>
             <figure>
                 <img src="images/Projects/NumberBaseConverter.png" alt="Number Base Converted">
-                <div class="image-cover">
+                <div class="image-cover" @click="redirectTo('https://number-base-converter.vercel.app/')">
                     <div class="circle">
                         <p>Visit Project</p>
                     </div>
@@ -23,7 +23,7 @@
             </figure>
             <figure>
                 <img src="images/Projects/Mukbang101.png" alt="Mukbang101">
-                <div class="image-cover">
+                <div class="image-cover" @click="redirectTo('https://mukbang101.x10.mx/')">
                     <div class="circle">
                         <p>Visit Project</p>
                     </div>
@@ -35,7 +35,12 @@
 
 <script>
     export default {
-
+        methods: {
+            redirectTo(link) {
+                console.log(link)
+                window.open(link, '_blank');
+            }
+        }
     }
 </script>
 

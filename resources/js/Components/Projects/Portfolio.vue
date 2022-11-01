@@ -49,9 +49,9 @@
 
         & article {
             & p.title {
-                color: hsl(0, 0%, 100%);
                 font-size: 5rem;
                 font-weight: bolder;
+                color: hsl(180, 100%, 43%);
             }
 
             &.projects-figure {

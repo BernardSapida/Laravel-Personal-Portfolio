@@ -1,5 +1,5 @@
 <template>
-    <section class="container p-3 my-5">
+    <section class="container p-3 mb-5">
         <article class="contact">
             <h1 class="mb-4">Contact me</h1>
             <p class="mb-4">I'm interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to use the form.</p>

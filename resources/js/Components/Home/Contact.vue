@@ -1,5 +1,6 @@
 <template>
     <section class="container p-3 my-5">
+        <p>CONTACT</p>
         <article class="contact">
             <h1 class="mb-4">Contact me</h1>
             <p class="mb-4">I'm interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to use the form.</p>
@@ -51,7 +52,11 @@
             </b-form>
         </article>
         <article class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.837328457755!2d120.92840871431795!3d14.378822086329155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d37ab5fc9f0d%3A0x6ee35f73fcd9560c!2sMalagasang%20I-F%2C%20Imus%2C%20Cavite!5e0!3m2!1sen!2sph!4v1667223878472!5m2!1sen!2sph" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.837328457755!2d120.92840871431795!3d14.378822086329155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d37ab5fc9f0d%3A0x6ee35f73fcd9560c!2sMalagasang%20I-F%2C%20Imus%2C%20Cavite!5e0!3m2!1sen!2sph!4v1667223878472!5m2!1sen!2sph"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
         </article>
     </section>
 </template>
@@ -95,10 +100,21 @@
 <style lang="scss" scoped>
     section.container {
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 30px;
+
+        & > p {
+            color: hsl(0, 0%, 6%);
+            position: absolute;
+            top: 0;
+            left: -30px;
+            font-size: calc(20vw + 2px);
+            font-weight: bolder;
+            z-index: -1;
+        }
 
         & article {
             &.contact {

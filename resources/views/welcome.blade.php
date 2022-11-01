@@ -5,6 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/node_modules/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <style lang="scss" scoped>
+            ::-webkit-scrollbar { width: 5px; }
+            ::-webkit-scrollbar-track { background: rgb(19, 19, 19); }
+            ::-webkit-scrollbar-thumb {
+                background: rgb(0, 255, 255);
+                border-radius: 10px;
+            }
+        </style>
         <title>Bernard Sapida</title>
     </head>
     <body style="background-color: hsl(0, 0%, 2%);">

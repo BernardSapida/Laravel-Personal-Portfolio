@@ -1,5 +1,7 @@
 <template>
     <section>
+        <div class="square-1"></div>
+        <div class="square-2"></div>
         <Navigation />
         <Landing />
         <Portfolio />
