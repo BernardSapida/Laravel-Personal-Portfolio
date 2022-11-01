@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <div class="container-name">
-                    <p class="m-0"><a class="navbar-brand" href="#"><strong>Bernard Sapida</strong></a></p>
+                    <router-link :class="[{'active': $route.name == 'homepage'}, 'nav-link', 'm-0']" :to="{ name: 'homepage' }"><strong class="navbar-brand">Bernard Sapida</strong></router-link>
                     <p class="name-label m-0">Frontend Developer</p>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
