@@ -1,12 +1,12 @@
 <template>
     <section class="container p-3 my-5">
-        <article class="About-Me">
+        <article class="About-Me" data-aos="fade-right" data-aos-easing="ease-in-out">
             <h1>About Me</h1>
             <p>Since I was 15 years old, I’ve been passionate about creating websites and learning different spectrums of web technologies. I am taking a Bachelor of Science in Computer Science at Cavite State University Indang Campus.</p>
             <p>For years I’ve been given many opportunities to work in developing a spectrum of web technologies, and it allows me to gather an enormous portion of skills and experience. As a freelance, working for clients and individuals around the world improves my communication skills, acquire new knowledge from people I meet, and discoveries from extraordinary and ambitious people.</p>
             <p>I currently work remotely with a selected freelance client base being open for new opportunities.</p>
         </article>
-        <article class="graph">
+        <article class="graph" data-aos="fade-left" data-aos-easing="ease-in-out">
             <canvas id="polarArea"></canvas>
         </article>
     </section>

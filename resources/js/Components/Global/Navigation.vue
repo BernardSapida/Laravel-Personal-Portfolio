@@ -1,5 +1,5 @@
 <template>
-    <header class="container">
+    <header class="container" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-delay="2500">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <div class="container-name d-flex align-items-center gap-2">

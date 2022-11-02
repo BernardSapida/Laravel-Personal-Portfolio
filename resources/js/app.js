@@ -10,8 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 window.Vue = Vue;
 
+Vue.use(AOS);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueRouter);
@@ -31,5 +35,6 @@ const router = new VueRouter({
 Vue.prototype.$appEvents = new Vue();
 
 new Vue({
+    created() { AOS.init(); },
     router,
 }).$mount("#app");

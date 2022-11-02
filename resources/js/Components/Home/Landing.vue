@@ -1,6 +1,6 @@
 <template>
     <section class="container my-5">
-        <article>
+        <article data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <h1>
                 Hi,<br>
                 I'm <span>Bernard</span>,<br>
@@ -8,8 +8,7 @@
             <p class="role">FRONTEND DEVELOPER</p>
             <p class="introduction">A 19-year-old <span>Frontend Developer</span> base<br> in Imus, Cavite Philippines.</p>
         </article>
-        <figure></figure>
-        <!-- <figure class="d-md-block d-none"></figure> -->
+        <figure data-aos="zoom-out-left" data-aos-easing="ease-in-out" data-aos-delay="2500"></figure>
     </section>
 </template>
 

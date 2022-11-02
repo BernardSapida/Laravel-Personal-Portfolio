@@ -1,12 +1,12 @@
 <template>
     <section class="container p-3 mb-5 mt-3">
-        <article class="About-Me">
+        <article class="About-Me" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <h1>Skill &<br>Experience</h1>
             <p>Since beginning my journey as a freelance developer nearly 4 years ago, I've done remote work for clients and collaborated with talented people to create web application for capstones, thesis, and consumer use.</p>
             <p>I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.</p>
             <p>Visit my <a href="https://www.linkedin.com/in/bernardsapida/" target="_blank">LinkedIn</a> profile for more details or just contact me.</p>
         </article>
-        <article class="graph d-block">
+        <article class="graph d-block" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <canvas id="polarArea"></canvas>
         </article>
     </section>

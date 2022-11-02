@@ -33,7 +33,7 @@
 
         & div.container {
             & p {
-                color: hsl(0, 0%, 30%);
+                color: hsl(0, 0%, 100%);
                 font-size: 14px;
             }
             & div.loading {
@@ -51,7 +51,7 @@
                     width: 50%;
                     height: 100%;
                     background-image: linear-gradient(to right, hsl(197, 100%, 50%), hsl(342, 100%, 50%));;
-                    animation: load-progress 3s forwards;
+                    animation: load-progress 2500ms forwards;
                 }
             }
         }
