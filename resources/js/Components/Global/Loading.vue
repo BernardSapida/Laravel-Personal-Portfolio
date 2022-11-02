@@ -50,7 +50,7 @@
                     left: 0;
                     width: 50%;
                     height: 100%;
-                    background-image: linear-gradient(to right, hsl(197, 100%, 50%), hsl(342, 100%, 50%));;
+                    background-image: linear-gradient(to right, hsl(197, 100%, 50%), hsl(342, 100%, 50%));
                     animation: load-progress 2500ms forwards;
                 }
             }

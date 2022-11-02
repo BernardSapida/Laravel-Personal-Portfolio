@@ -13,7 +13,7 @@
             ::-webkit-scrollbar { width: 5px; }
             ::-webkit-scrollbar-track { background: hsl(0, 0%, 7%); }
             ::-webkit-scrollbar-thumb {
-                background: rgb(0, 255, 255);
+                background-image: linear-gradient(to bottom, hsl(197, 100%, 50%), hsl(342, 100%, 50%));
                 border-radius: 10px;
             }
         </style>
