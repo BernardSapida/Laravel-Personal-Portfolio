@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="container px-3 text-center">
-            <img class="mb-2" src="images/logo/bs.jpg" alt="Bernard Sapida Logo" width="40" height="40">
+            <img class="mb-2" src="images/Logo/bs.jpg" alt="Bernard Sapida Logo" width="40" height="40">
             <p>Bernard is preparing</p>
             <div class="loading mx-auto"></div>
         </div>
