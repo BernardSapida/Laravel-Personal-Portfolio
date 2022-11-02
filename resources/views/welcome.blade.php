@@ -11,7 +11,7 @@
             }
 
             ::-webkit-scrollbar { width: 5px; }
-            ::-webkit-scrollbar-track { background: rgb(19, 19, 19); }
+            ::-webkit-scrollbar-track { background: hsl(0, 0%, 7%); }
             ::-webkit-scrollbar-thumb {
                 background: rgb(0, 255, 255);
                 border-radius: 10px;

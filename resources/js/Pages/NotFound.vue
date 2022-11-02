@@ -1,6 +1,7 @@
 <template>
     <section>
         <Navigation/>  
+        <Loading v-if="isLoading" />
         <article>
             <div>
                 <p class="error">404</p>
@@ -12,13 +13,25 @@
 
 <script>
     import Navigation from "../Components/Global/Navigation";
+    import Loading from "../Components/Global/Loading";
     import Footer from "../Components/Global/Footer";
 
     export default {
         components: {
             Navigation,
+            Loading,
             Footer
-        },  
+        },
+        mounted() {
+            setTimeout(() => {
+                this.isLoading = false;
+            }, 3200);
+        },
+        data() {
+            return {
+                isLoading: true,
+            }
+        }
     }
 </script>
 

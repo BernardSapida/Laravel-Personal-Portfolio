@@ -3,6 +3,7 @@
         <div class="square-1"></div>
         <div class="square-2"></div>
         <Navigation />
+        <Loading v-if="isLoading" />
         <Landing />
         <Portfolio />
         <Myself />
@@ -13,6 +14,7 @@
 
 <script>
     import Navigation from "../Components/Global/Navigation";
+    import Loading from "../Components/Global/Loading";
     import Landing from "../Components/Home/Landing";
     import Portfolio from "../Components/Home/Portfolio";
     import Myself from "../Components/Home/Myself";
@@ -22,19 +24,29 @@
     export default {
         components: {
             Navigation,
+            Loading,
             Landing,
             Portfolio,
             Myself,
             Contact,
             Footer
-        },  
+        },
+        mounted() {
+            setTimeout(() => {
+                this.isLoading = false;
+            }, 3200);
+        },
+        data() {
+            return {
+                isLoading: true,
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     section {
         overflow-x: hidden;
-        position: relative;
 
         & div.square-1 {
             position: fixed;
