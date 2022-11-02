@@ -6,6 +6,10 @@
         <link rel="stylesheet" href="/node_modules/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <style lang="scss" scoped>
+            html {  
+                user-select: none;
+            }
+
             ::-webkit-scrollbar { width: 5px; }
             ::-webkit-scrollbar-track { background: rgb(19, 19, 19); }
             ::-webkit-scrollbar-thumb {
