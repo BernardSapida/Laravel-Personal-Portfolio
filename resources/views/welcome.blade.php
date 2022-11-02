@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="/node_modules/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="icon" href="images/Logo/bs.jpg">
-        <style lang="scss" scoped>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+            
             html {  
                 user-select: none;
             }

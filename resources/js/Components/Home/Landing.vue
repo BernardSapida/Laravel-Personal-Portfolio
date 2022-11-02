@@ -2,15 +2,33 @@
     <section class="container my-5">
         <article data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <h1>
-                Hi,<br>
-                I'm <span>Bernard</span>,<br>
+                <span @mouseover.stop="hoverMe($event)">H</span><span @mouseover.stop="hoverMe($event)">i</span><span @mouseover.stop="hoverMe($event)">,</span><br>
+                <span @mouseover.stop="hoverMe($event)">I</span><span @mouseover.stop="hoverMe($event)">'</span><span @mouseover.stop="hoverMe($event)">m</span>&nbsp;<span @mouseover.stop="hoverMe($event)" class="name">B</span><span @mouseover.stop="hoverMe($event)" class="name">e</span><span @mouseover.stop="hoverMe($event)" class="name">r</span><span @mouseover.stop="hoverMe($event)" class="name">n</span><span @mouseover.stop="hoverMe($event)" class="name">a</span><span @mouseover.stop="hoverMe($event)" class="name">r</span><span @mouseover.stop="hoverMe($event)" class="name">d</span>,
             </h1>
-            <p class="role">FRONTEND DEVELOPER</p>
+            <p class="role">
+                <span @mouseover.stop="hoverMe($event)">F</span><span @mouseover.stop="hoverMe($event)">R</span><span @mouseover.stop="hoverMe($event)">O</span><span @mouseover.stop="hoverMe($event)">N</span><span @mouseover.stop="hoverMe($event)">T</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">N</span><span @mouseover.stop="hoverMe($event)">D</span>&nbsp;<span @mouseover.stop="hoverMe($event)">D</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">V</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">L</span><span @mouseover.stop="hoverMe($event)">O</span><span @mouseover.stop="hoverMe($event)">P</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">R</span>
+            </p>
             <p class="introduction">A 19-year-old <span>Frontend Developer</span> base<br> in Imus, Cavite Philippines.</p>
         </article>
         <figure data-aos="zoom-out-left" data-aos-easing="ease-in-out" data-aos-delay="2500"></figure>
     </section>
 </template>
+
+<script>
+    export default {
+        methods: {
+            hoverMe(e) {
+                if(e.target.className.split(" ")[e.target.className.split(" ").length - 1] != "rubber") {
+                    e.target.classList.add("rubber");
+
+                    setTimeout(() => {
+                        e.target.classList.remove("rubber");
+                    }, 750);
+                }
+            }
+        }
+    }
+</script>
 
 <style lang="scss" scoped>
     section.container {
@@ -25,9 +43,16 @@
                 color: hsl(0, 0%, 100%);
                 font-size: 6rem;
                 font-weight: bolder;
+                font-family: 'Varela Round', sans-serif;
 
                 & span {
-                    color: hsl(180, 100%, 43%);
+                    &.rubber {
+                        display: inline-block;
+                        animation: rubber 700ms alternate ease-out;                     
+                    }
+                    &.name {
+                        color: hsl(180, 100%, 43%);
+                    }
                 }
             }
 
@@ -35,6 +60,17 @@
                 color: hsl(0, 0%, 100%);
                 font-size: 3.5rem;
                 font-weight: bolder;
+                font-family: 'Varela Round', sans-serif;
+
+                & span {
+                    &.rubber {
+                        display: inline-block;
+                        animation: rubber 700ms alternate ease-out;                     
+                    }
+                    &.name {
+                        color: hsl(180, 100%, 43%);
+                    }
+                }
             }
 
             & p.introduction {
@@ -57,6 +93,33 @@
             background-image: url("./images/Me/BernardSapida.jpg");
             background-size: cover;
             background-position: center;
+        }
+    }
+
+    @keyframes rubber {
+        0%{
+            transform: scaleX(1);
+            color: hsl(197, 100%, 50%);
+        }
+        40%{
+            transform: scaleX(1.12) scaleY(0.75);
+        }
+        55%{
+            transform: scaleX(0.85) scaleY(1);
+            color: hsl(342, 100%, 50%);
+        }
+        65%{
+            transform: scaleX(1.09) scaleY(0.85);
+        }
+        75%{
+            transform: scaleX(0.9)  scaleY(1);
+        }
+        90%{
+            transform: scaleX(1.05) scaleY(0.95);
+        }
+        100%{
+            transform: scaleX(1) scaleY(1);
+            color: hsl(0, 0%, 100%);
         }
     }
 

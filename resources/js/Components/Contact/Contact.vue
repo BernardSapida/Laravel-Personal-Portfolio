@@ -1,7 +1,9 @@
 <template>
     <section class="container p-3 mb-5">
         <article class="contact" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
-            <h1 class="mb-4">Contact me</h1>
+            <h1 class="mb-4">
+                <span @mouseover.stop="hoverMe($event)">C</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">n</span><span @mouseover.stop="hoverMe($event)">t</span><span @mouseover.stop="hoverMe($event)">a</span><span @mouseover.stop="hoverMe($event)">c</span><span @mouseover.stop="hoverMe($event)">t</span>&nbsp;<span @mouseover.stop="hoverMe($event)">m</span><span @mouseover.stop="hoverMe($event)">e</span>
+            </h1>
             <p class="mb-4">I'm interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to use the form.</p>
             <b-form @submit.prevent="submitContact" novalidate>
                 <div class="row mb-2 g-2">
@@ -78,7 +80,6 @@
         },
         methods: {
             submitContact() {
-                console.log("CLICKED!");
                 this.state_name = false;
                 this.state_email = false;
                 this.state_subject = false;
@@ -87,6 +88,15 @@
                 this.err_email = "Email is required";
                 this.err_subject = "Subject is required";
                 this.err_message = "Message is required";
+            },
+            hoverMe(e) {
+                if(e.target.className.split(" ")[e.target.className.split(" ").length - 1] != "rubber") {
+                    e.target.classList.add("rubber");
+
+                    setTimeout(() => {
+                        e.target.classList.remove("rubber");
+                    }, 750);
+                }
             }
         }
     }
@@ -109,6 +119,17 @@
                     font-size: 5rem;
                     font-weight: bolder;
                     color: hsl(180, 100%, 43%);
+                    font-family: 'Varela Round', sans-serif;
+
+                    & span {
+                        &.rubber {
+                            display: inline-block;
+                            animation: rubber 700ms alternate ease-out;                     
+                        }
+                        &.name {
+                            color: hsl(180, 100%, 43%);
+                        }
+                    }
                 }
 
                 & p {
@@ -150,6 +171,33 @@
                     height: 600px;
                 }
             }
+        }
+    }
+
+    @keyframes rubber {
+        0%{
+            transform: scaleX(1);
+            color: hsl(197, 100%, 50%);
+        }
+        40%{
+            transform: scaleX(1.12) scaleY(0.75);
+        }
+        55%{
+            transform: scaleX(0.85) scaleY(1);
+            color: hsl(342, 100%, 50%);
+        }
+        65%{
+            transform: scaleX(1.09) scaleY(0.85);
+        }
+        75%{
+            transform: scaleX(0.9)  scaleY(1);
+        }
+        90%{
+            transform: scaleX(1.05) scaleY(0.95);
+        }
+        100%{
+            transform: scaleX(1) scaleY(1);
+            color: hsl(0, 0%, 100%);
         }
     }
 

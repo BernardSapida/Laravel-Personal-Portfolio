@@ -1,7 +1,9 @@
 <template>
     <section class="container p-3 my-5">
         <article data-aos="fade-right" data-aos-easing="ease-in-out">
-            <p class="title">My Portfolio</p>
+            <p class="title">
+                <span @mouseover.stop="hoverMe($event)">M</span><span @mouseover.stop="hoverMe($event)">y</span>&nbsp;<span @mouseover.stop="hoverMe($event)">P</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">r</span><span @mouseover.stop="hoverMe($event)">t</span><span @mouseover.stop="hoverMe($event)">f</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">l</span><span @mouseover.stop="hoverMe($event)">i</span><span @mouseover.stop="hoverMe($event)">o</span>
+            </p>
             <p class="paragraph">A small gallery of recent projects chosen by me. I've done them all together with amazing people from companies around the globe. It's only a drop in the ocean compared to the entire list.</p>
         </article>
         <article class="projects-figure">
@@ -37,8 +39,16 @@
     export default {
         methods: {
             redirectTo(link) {
-                console.log(link)
                 window.open(link, '_blank');
+            },
+            hoverMe(e) {
+                if(e.target.className.split(" ")[e.target.className.split(" ").length - 1] != "rubber") {
+                    e.target.classList.add("rubber");
+
+                    setTimeout(() => {
+                        e.target.classList.remove("rubber");
+                    }, 750);
+                }
             }
         }
     }
@@ -55,6 +65,17 @@
                     color: hsl(180, 100%, 43%);
                     font-size: 5rem;
                     font-weight: bolder;
+                    font-family: 'Varela Round', sans-serif;
+
+                    & span {
+                        &.rubber {
+                            display: inline-block;
+                            animation: rubber 700ms alternate ease-out;                     
+                        }
+                        &.name {
+                            color: hsl(180, 100%, 43%);
+                        }
+                    }
                 }
             }
 
@@ -113,6 +134,33 @@
                     }
                 }
             }
+        }
+    }
+
+    @keyframes rubber {
+        0%{
+            transform: scaleX(1);
+            color: hsl(197, 100%, 50%);
+        }
+        40%{
+            transform: scaleX(1.12) scaleY(0.75);
+        }
+        55%{
+            transform: scaleX(0.85) scaleY(1);
+            color: hsl(342, 100%, 50%);
+        }
+        65%{
+            transform: scaleX(1.09) scaleY(0.85);
+        }
+        75%{
+            transform: scaleX(0.9)  scaleY(1);
+        }
+        90%{
+            transform: scaleX(1.05) scaleY(0.95);
+        }
+        100%{
+            transform: scaleX(1) scaleY(1);
+            color: hsl(0, 0%, 100%);
         }
     }
 
