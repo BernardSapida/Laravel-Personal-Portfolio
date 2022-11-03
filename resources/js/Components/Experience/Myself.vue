@@ -2,13 +2,13 @@
     <section class="container p-3 mb-5 mt-3">
         <article class="About-Me" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <h1>
-                <span @mouseover.stop="hoverMe($event)">S</span><span @mouseover.stop="hoverMe($event)">k</span><span @mouseover.stop="hoverMe($event)">i</span><span @mouseover.stop="hoverMe($event)">l</span><span @mouseover.stop="hoverMe($event)">l</span>&nbsp;<span @mouseover.stop="hoverMe($event)">&</span>&nbsp;<br><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">x</span><span @mouseover.stop="hoverMe($event)">p</span><span @mouseover.stop="hoverMe($event)">e</span><span @mouseover.stop="hoverMe($event)">r</span><span @mouseover.stop="hoverMe($event)">i</span><span @mouseover.stop="hoverMe($event)">e</span><span @mouseover.stop="hoverMe($event)">n</span><span @mouseover.stop="hoverMe($event)">c</span><span @mouseover.stop="hoverMe($event)">e</span>
+                <span class="animation" @mouseover.stop="hoverMe($event)">S</span><span class="animation" @mouseover.stop="hoverMe($event)">k</span><span class="animation" @mouseover.stop="hoverMe($event)">i</span><span class="animation" @mouseover.stop="hoverMe($event)">l</span><span class="animation" @mouseover.stop="hoverMe($event)">l</span>&nbsp;<span class="animation" @mouseover.stop="hoverMe($event)">&</span>&nbsp;<br><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">x</span><span class="animation" @mouseover.stop="hoverMe($event)">p</span><span class="animation" @mouseover.stop="hoverMe($event)">e</span><span class="animation" @mouseover.stop="hoverMe($event)">r</span><span class="animation" @mouseover.stop="hoverMe($event)">i</span><span class="animation" @mouseover.stop="hoverMe($event)">e</span><span class="animation" @mouseover.stop="hoverMe($event)">n</span><span class="animation" @mouseover.stop="hoverMe($event)">c</span><span class="animation" @mouseover.stop="hoverMe($event)">e</span>
             </h1>
             <p>Since beginning my journey as a freelance developer nearly 4 years ago, I've done remote work for clients and collaborated with talented people to create web application for capstones, thesis, and consumer use.</p>
             <p>I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.</p>
             <p>Visit my <a href="https://www.linkedin.com/in/bernardsapida/" target="_blank">LinkedIn</a> profile for more details or just contact me.</p>
         </article>
-        <article class="graph d-block" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="2500">
+        <article class="graph d-block" data-aos="fade-left" data-aos-easing="ease-in-out">
             <canvas id="polarArea"></canvas>
         </article>
     </section>
@@ -19,6 +19,8 @@ import Chart from 'chart.js/auto'
 
 export default {
     mounted() {
+        let spans = document.querySelectorAll(".animation");
+        let spansLength = spans.length;
         const ctx = document.getElementById('polarArea');
         const myChart = new Chart(ctx, {
             type: 'polarArea',
@@ -48,6 +50,22 @@ export default {
             }
         });
         myChart;
+
+        setTimeout(() => {
+            let time = setInterval(() => {
+                if(spansLength != 0) {
+                    spans[spans.length - spansLength].classList.add("rubber");
+                    spansLength -= 1;
+                } else {
+                    setTimeout(() => {
+                        spans.forEach(span => {
+                            span.classList.remove("rubber")
+                        });
+                        clearInterval(time);
+                    }, 700);
+                }
+            }, 150);
+        }, 3000); 
     },
     methods: {
         redirectTo(link) {

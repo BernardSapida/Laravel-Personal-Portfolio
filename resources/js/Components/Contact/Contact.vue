@@ -2,7 +2,7 @@
     <section class="container p-3 mb-5">
         <article class="contact" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <h1 class="mb-4">
-                <span @mouseover.stop="hoverMe($event)">C</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">n</span><span @mouseover.stop="hoverMe($event)">t</span><span @mouseover.stop="hoverMe($event)">a</span><span @mouseover.stop="hoverMe($event)">c</span><span @mouseover.stop="hoverMe($event)">t</span>&nbsp;<span @mouseover.stop="hoverMe($event)">m</span><span @mouseover.stop="hoverMe($event)">e</span>
+                <span class="animation" @mouseover.stop="hoverMe($event)">C</span><span class="animation" @mouseover.stop="hoverMe($event)">o</span><span class="animation" @mouseover.stop="hoverMe($event)">n</span><span class="animation" @mouseover.stop="hoverMe($event)">t</span><span class="animation" @mouseover.stop="hoverMe($event)">a</span><span class="animation" @mouseover.stop="hoverMe($event)">c</span><span class="animation" @mouseover.stop="hoverMe($event)">t</span>&nbsp;<span class="animation" @mouseover.stop="hoverMe($event)">m</span><span class="animation" @mouseover.stop="hoverMe($event)">e</span>
             </h1>
             <p class="mb-4">I'm interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to use the form.</p>
             <b-form @submit.prevent="submitContact" novalidate>
@@ -52,7 +52,7 @@
                 </b-button>
             </b-form>
         </article>
-        <article class="map" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="2500">
+        <article class="map" data-aos="fade-left" data-aos-easing="ease-in-out">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.837328457755!2d120.92840871431795!3d14.378822086329155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d37ab5fc9f0d%3A0x6ee35f73fcd9560c!2sMalagasang%20I-F%2C%20Imus%2C%20Cavite!5e0!3m2!1sen!2sph!4v1667223878472!5m2!1sen!2sph" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </article>
     </section>
@@ -60,6 +60,26 @@
 
 <script>
     export default {
+        mounted() {
+            let spans = document.querySelectorAll(".animation");
+            let spansLength = spans.length;
+
+            setTimeout(() => {
+                let time = setInterval(() => {
+                    if(spansLength != 0) {
+                        spans[spans.length - spansLength].classList.add("rubber");
+                        spansLength -= 1;
+                    } else {
+                        setTimeout(() => {
+                            spans.forEach(span => {
+                                span.classList.remove("rubber")
+                            });
+                            clearInterval(time);
+                        }, 700);
+                    }
+                }, 150);
+            }, 3000); 
+        },
         data() {
             return {
                 name: "",

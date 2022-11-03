@@ -35,6 +35,8 @@ const router = new VueRouter({
 Vue.prototype.$appEvents = new Vue();
 
 new Vue({
-    created() { AOS.init(); },
+    created() { 
+        AOS.init(); 
+    },
     router,
 }).$mount("#app");

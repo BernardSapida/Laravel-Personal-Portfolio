@@ -2,7 +2,7 @@
     <section class="container p-3 my-5">
         <article data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <p class="title mb-5">
-                <span @mouseover.stop="hoverMe($event)">P</span><span @mouseover.stop="hoverMe($event)">r</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">j</span><span @mouseover.stop="hoverMe($event)">e</span><span @mouseover.stop="hoverMe($event)">c</span><span @mouseover.stop="hoverMe($event)">t</span><span @mouseover.stop="hoverMe($event)">s</span>
+                <span class="animation" @mouseover.stop="hoverMe($event)">P</span><span class="animation" @mouseover.stop="hoverMe($event)">r</span><span class="animation" @mouseover.stop="hoverMe($event)">o</span><span class="animation" @mouseover.stop="hoverMe($event)">j</span><span class="animation" @mouseover.stop="hoverMe($event)">e</span><span class="animation" @mouseover.stop="hoverMe($event)">c</span><span class="animation" @mouseover.stop="hoverMe($event)">t</span><span class="animation" @mouseover.stop="hoverMe($event)">s</span>
             </p>
         </article>
         <article class="projects-figure">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </figure>
-            <figure data-aos="flip-up" data-aos-easing="ease-in-out" data-aos-delay="2500">
+            <figure data-aos="flip-up" data-aos-easing="ease-in-out">
                 <img src="images/Projects/Mukbang101.png" alt="Mukbang101">
                 <div class="image-cover" @click="redirectTo('https://mukbang101.x10.mx/')">
                     <div class="circle">
@@ -36,6 +36,26 @@
 
 <script>
     export default {
+        mounted() {
+            let spans = document.querySelectorAll(".animation");
+            let spansLength = spans.length;
+
+            setTimeout(() => {
+                let time = setInterval(() => {
+                    if(spansLength != 0) {
+                        spans[spans.length - spansLength].classList.add("rubber");
+                        spansLength -= 1;
+                    } else {
+                        setTimeout(() => {
+                            spans.forEach(span => {
+                                span.classList.remove("rubber")
+                            });
+                            clearInterval(time);
+                        }, 700);
+                    }
+                }, 150);
+            }, 3000); 
+        },
         methods: {
             redirectTo(link) {
                 window.open(link, '_blank');

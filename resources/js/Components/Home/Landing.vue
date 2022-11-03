@@ -2,11 +2,10 @@
     <section class="container my-5">
         <article data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <h1>
-                <span @mouseover.stop="hoverMe($event)">H</span><span @mouseover.stop="hoverMe($event)">i</span><span @mouseover.stop="hoverMe($event)">,</span><br>
-                <span @mouseover.stop="hoverMe($event)">I</span><span @mouseover.stop="hoverMe($event)">'</span><span @mouseover.stop="hoverMe($event)">m</span>&nbsp;<span @mouseover.stop="hoverMe($event)" class="name">B</span><span @mouseover.stop="hoverMe($event)" class="name">e</span><span @mouseover.stop="hoverMe($event)" class="name">r</span><span @mouseover.stop="hoverMe($event)" class="name">n</span><span @mouseover.stop="hoverMe($event)" class="name">a</span><span @mouseover.stop="hoverMe($event)" class="name">r</span><span @mouseover.stop="hoverMe($event)" class="name">d</span>,
+                <span class="animation" @mouseover.stop="hoverMe($event)">H</span><span class="animation" @mouseover.stop="hoverMe($event)">i</span><span class="animation" @mouseover.stop="hoverMe($event)">,</span><br><span class="animation" @mouseover.stop="hoverMe($event)">I</span><span class="animation" @mouseover.stop="hoverMe($event)">'</span><span class="animation" @mouseover.stop="hoverMe($event)">m</span>&nbsp;<span class="animation name" @mouseover.stop="hoverMe($event)">B</span><span class="animation name" @mouseover.stop="hoverMe($event)">e</span><span class="animation name" @mouseover.stop="hoverMe($event)">r</span><span class="animation name" @mouseover.stop="hoverMe($event)">n</span><span class="animation name" @mouseover.stop="hoverMe($event)">a</span><span class="animation name" @mouseover.stop="hoverMe($event)">r</span><span class="animation name" @mouseover.stop="hoverMe($event)">d</span><span class="animation" @mouseover.stop="hoverMe($event)">,</span>
             </h1>
             <p class="role">
-                <span @mouseover.stop="hoverMe($event)">F</span><span @mouseover.stop="hoverMe($event)">R</span><span @mouseover.stop="hoverMe($event)">O</span><span @mouseover.stop="hoverMe($event)">N</span><span @mouseover.stop="hoverMe($event)">T</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">N</span><span @mouseover.stop="hoverMe($event)">D</span>&nbsp;<span @mouseover.stop="hoverMe($event)">D</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">V</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">L</span><span @mouseover.stop="hoverMe($event)">O</span><span @mouseover.stop="hoverMe($event)">P</span><span @mouseover.stop="hoverMe($event)">E</span><span @mouseover.stop="hoverMe($event)">R</span>
+                <span class="animation" @mouseover.stop="hoverMe($event)">F</span><span class="animation" @mouseover.stop="hoverMe($event)">R</span><span class="animation" @mouseover.stop="hoverMe($event)">O</span><span class="animation" @mouseover.stop="hoverMe($event)">N</span><span class="animation" @mouseover.stop="hoverMe($event)">T</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">N</span><span class="animation" @mouseover.stop="hoverMe($event)">D</span>&nbsp;<span class="animation" @mouseover.stop="hoverMe($event)">D</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">V</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">L</span><span class="animation" @mouseover.stop="hoverMe($event)">O</span><span class="animation" @mouseover.stop="hoverMe($event)">P</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">R</span>
             </p>
             <p class="introduction">A 19-year-old <span>Frontend Developer</span> base<br> in Imus, Cavite Philippines.</p>
         </article>
@@ -16,6 +15,26 @@
 
 <script>
     export default {
+        mounted() {
+            let spans = document.querySelectorAll(".animation");
+            let spansLength = spans.length;
+
+            setTimeout(() => {
+                let time = setInterval(() => {
+                    if(spansLength != 0) {
+                        spans[spans.length - spansLength].classList.add("rubber");
+                        spansLength -= 1;
+                    } else {
+                        setTimeout(() => {
+                            spans.forEach(span => {
+                                span.classList.remove("rubber")
+                            });
+                            clearInterval(time);
+                        }, 700);
+                    }
+                }, 150);
+            }, 3000); 
+        },
         methods: {
             hoverMe(e) {
                 if(e.target.className.split(" ")[e.target.className.split(" ").length - 1] != "rubber") {
