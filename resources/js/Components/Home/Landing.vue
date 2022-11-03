@@ -7,7 +7,7 @@
             <p class="role">
                 <span class="animation" @mouseover.stop="hoverMe($event)">F</span><span class="animation" @mouseover.stop="hoverMe($event)">R</span><span class="animation" @mouseover.stop="hoverMe($event)">O</span><span class="animation" @mouseover.stop="hoverMe($event)">N</span><span class="animation" @mouseover.stop="hoverMe($event)">T</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">N</span><span class="animation" @mouseover.stop="hoverMe($event)">D</span>&nbsp;<span class="animation" @mouseover.stop="hoverMe($event)">D</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">V</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">L</span><span class="animation" @mouseover.stop="hoverMe($event)">O</span><span class="animation" @mouseover.stop="hoverMe($event)">P</span><span class="animation" @mouseover.stop="hoverMe($event)">E</span><span class="animation" @mouseover.stop="hoverMe($event)">R</span>
             </p>
-            <p class="introduction">A 19-year-old <span>Frontend Developer</span> base<br> in Imus, Cavite Philippines.</p>
+            <p class="introduction">A 19-year-old <span>Frontend Developer</span> based<br> in Imus, Cavite Philippines.</p>
         </article>
         <figure data-aos="zoom-out-left" data-aos-easing="ease-in-out" data-aos-delay="2500">
             <img src="images/Me/BernardSapida.png" alt="Bernard Sapida">
