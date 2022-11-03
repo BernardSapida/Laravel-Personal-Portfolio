@@ -4,7 +4,7 @@
             <p class="title">
                 <span @mouseover.stop="hoverMe($event)">M</span><span @mouseover.stop="hoverMe($event)">y</span>&nbsp;<span @mouseover.stop="hoverMe($event)">P</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">r</span><span @mouseover.stop="hoverMe($event)">t</span><span @mouseover.stop="hoverMe($event)">f</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">l</span><span @mouseover.stop="hoverMe($event)">i</span><span @mouseover.stop="hoverMe($event)">o</span>
             </p>
-            <p class="paragraph">A small gallery of recent projects chosen by me. I've done them all together with amazing people from companies around the globe. It's only a drop in the ocean compared to the entire list.</p>
+            <p class="paragraph">A small gallery of my latest work is displayed here, and it's my pleasure if you'll view my projects.</p>
         </article>
         <article class="projects-figure">
             <figure data-aos="flip-up" data-aos-easing="ease-in-out">

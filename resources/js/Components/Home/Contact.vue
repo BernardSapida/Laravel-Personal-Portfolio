@@ -5,7 +5,7 @@
             <h1 class="mb-4">
                 <span @mouseover.stop="hoverMe($event)">C</span><span @mouseover.stop="hoverMe($event)">o</span><span @mouseover.stop="hoverMe($event)">n</span><span @mouseover.stop="hoverMe($event)">t</span><span @mouseover.stop="hoverMe($event)">a</span><span @mouseover.stop="hoverMe($event)">c</span><span @mouseover.stop="hoverMe($event)">t</span>&nbsp;<span @mouseover.stop="hoverMe($event)">m</span><span @mouseover.stop="hoverMe($event)">e</span>
             </h1>
-            <p class="mb-4">I'm interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to use the form.</p>
+            <p class="mb-4">I am interested in freelance opportunities, especially those involving ambitious or big projects, which fascinate me. Use the form if you have any additional requests or inquiries.</p>
             <b-form @submit.prevent="sendEmail" novalidate>
                 <div class="row mb-2 g-2">
                     <b-form-group
@@ -150,9 +150,9 @@
         & > p {
             color: hsl(0, 0%, 6%);
             position: absolute;
-            top: 0;
-            left: -30px;
-            font-size: calc(20vw + 2px);
+            top: -20px;
+            left: 0;
+            font-size: calc(15vw + 2px);
             font-weight: bolder;
             z-index: -1;
         }
