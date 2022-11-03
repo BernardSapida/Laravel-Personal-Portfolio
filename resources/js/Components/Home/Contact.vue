@@ -142,7 +142,7 @@
     section.container {
         display: flex;
         position: relative;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 30px;
@@ -159,7 +159,8 @@
 
         & article {
             &.contact {
-                max-width: 500px;
+                margin: auto;
+                max-width: 600px;
                 width: 100%;
 
                 & h1 {
@@ -206,6 +207,7 @@
             }
 
             &.map {
+                margin: auto;
                 max-width: 500px;
                 width: 100%;
 

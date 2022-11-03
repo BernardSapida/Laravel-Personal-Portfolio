@@ -79,14 +79,15 @@ export default {
     section.container {
         padding: 50px 0;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 20px;
         flex-wrap: wrap;
 
         & article {
             &.About-Me {
-                max-width: 600px;
+                margin: auto;
+                max-width: 750px;
                 width: 100%;
                 color: hsl(0, 0%, 100%);
                 
@@ -110,7 +111,8 @@ export default {
             }
 
             &.graph {
-                max-width: 400px;
+                margin: auto;
+                max-width: 500px;
                 width: 100%;
             }
         }
