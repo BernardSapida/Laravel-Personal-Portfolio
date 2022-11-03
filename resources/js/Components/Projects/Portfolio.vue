@@ -6,7 +6,7 @@
             </p>
         </article>
         <article class="projects-figure">
-            <figure data-aos="flip-up" data-aos-easing="ease-in-out" data-aos-delay="2500">
+            <figure data-aos="flip-up" data-aos-easing="ease-in-out">
                 <img src="images/Projects/Burgerhub.png" alt="Burgerhub">
                 <div class="image-cover" @click="redirectTo('https://burgerhub.x10.mx/')">
                     <div class="circle">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </figure>
-            <figure data-aos="flip-down" data-aos-easing="ease-in-out" data-aos-delay="2500">
+            <figure data-aos="flip-down" data-aos-easing="ease-in-out">
                 <img src="images/Projects/NumberBaseConverter.png" alt="Number Base Converted">
                 <div class="image-cover" @click="redirectTo('https://number-base-converter.vercel.app/')">
                     <div class="circle">
@@ -75,7 +75,8 @@
 
 <style lang="scss" scoped>
     section.container {
-        margin-bottom: 150px !important;
+        margin-top: 20px !important;
+        margin-bottom: 80px !important;
 
         & article {
             & p.title {

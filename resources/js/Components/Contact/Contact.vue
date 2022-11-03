@@ -155,6 +155,8 @@
 
 <style lang="scss" scoped>
     section.container {
+        margin-top: 20px !important;
+        margin-bottom: 80px !important;
         display: flex;
         justify-content: center;
         align-items: center;

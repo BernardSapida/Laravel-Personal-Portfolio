@@ -86,12 +86,15 @@ export default {
 
 <style lang="scss" scoped>
     section.container {
+        margin-top: 20px !important;
+        margin-bottom: 80px !important;
         padding: 50px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
         flex-wrap: wrap;
+        overflow: hidden;
 
         & article {
             &.About-Me {

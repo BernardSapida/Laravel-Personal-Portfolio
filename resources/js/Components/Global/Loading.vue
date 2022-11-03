@@ -26,7 +26,7 @@
         left: 0;
         height: 100vh;
         width: 100%;
-        background: hsl(0, 0%, 7%);
+        background: hsl(0, 0%, 2%);;
         display: grid;
         place-items: center;
         z-index: 10;
