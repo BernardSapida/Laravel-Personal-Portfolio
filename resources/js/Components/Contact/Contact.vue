@@ -5,7 +5,7 @@
                 <span class="animation" @mouseover.stop="hoverMe($event)">C</span><span class="animation" @mouseover.stop="hoverMe($event)">o</span><span class="animation" @mouseover.stop="hoverMe($event)">n</span><span class="animation" @mouseover.stop="hoverMe($event)">t</span><span class="animation" @mouseover.stop="hoverMe($event)">a</span><span class="animation" @mouseover.stop="hoverMe($event)">c</span><span class="animation" @mouseover.stop="hoverMe($event)">t</span>&nbsp;<span class="animation" @mouseover.stop="hoverMe($event)">m</span><span class="animation" @mouseover.stop="hoverMe($event)">e</span>
             </h1>
             <p class="mb-4">I'm interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to use the form.</p>
-            <b-form @submit.prevent="submitContact" novalidate>
+            <b-form @submit.prevent="sendEmail" novalidate>
                 <div class="row mb-2 g-2">
                     <b-form-group
                         class="col-md-6 col-sm-12"
@@ -99,15 +99,22 @@
             }
         },
         methods: {
-            submitContact() {
-                this.state_name = false;
-                this.state_email = false;
-                this.state_subject = false;
-                this.state_message = false;
-                this.err_name = "Name is required";
-                this.err_email = "Email is required";
-                this.err_subject = "Subject is required";
-                this.err_message = "Message is required";
+            clearValues() {
+                this.name = "";
+                this.email = "";
+                this.subject = "";
+                this.message = "";
+            },
+            onClearErrors() {
+                this.state_name = null;
+                this.state_email = null;
+                this.state_subject = null;
+                this.state_message = null;
+
+                this.err_name = "";
+                this.err_email = "";
+                this.err_subject = "";
+                this.err_message = "";
             },
             hoverMe(e) {
                 if(e.target.className.split(" ")[e.target.className.split(" ").length - 1] != "rubber") {
@@ -117,6 +124,30 @@
                         e.target.classList.remove("rubber");
                     }, 750);
                 }
+            },
+            sendEmail() {
+                this.onClearErrors();
+                Vue.axios.post('/sendFeedback', {
+                    name: this.name,
+                    email: this.email,
+                    subject: this.subject,
+                    message: this.message
+                })
+                .then(() => {
+                    this.$swal("Message sent!", "Thank you for sending a message!", "success");
+                    this.clearValues();
+                })
+                .catch((error) => {
+                    this.show_errors(error.response.data.errors);
+                });
+            },
+            show_errors(res) {
+                let keys = Object.keys(res);
+
+                keys.forEach(key => {
+                    this[`err_${key}`] = res[key][0];
+                    this[`state_${key}`] = false;
+                });
             }
         }
     }
