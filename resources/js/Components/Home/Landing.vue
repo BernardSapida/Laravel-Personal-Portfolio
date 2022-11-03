@@ -9,7 +9,9 @@
             </p>
             <p class="introduction">A 19-year-old <span>Frontend Developer</span> base<br> in Imus, Cavite Philippines.</p>
         </article>
-        <figure data-aos="zoom-out-left" data-aos-easing="ease-in-out" data-aos-delay="2500"></figure>
+        <figure data-aos="zoom-out-left" data-aos-easing="ease-in-out" data-aos-delay="2500">
+            <img src="images/Me/BernardSapida.png" alt="Bernard Sapida">
+        </figure>
     </section>
 </template>
 
@@ -107,11 +109,11 @@
             display: block;
             height: 400px;
             width: 400px;
-            border-radius: 50%;
-            background-color: hsl(180, 100%, 43%);
-            background-image: url("./images/Me/BernardSapida.jpg");
-            background-size: cover;
-            background-position: center;
+            
+            & img {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
